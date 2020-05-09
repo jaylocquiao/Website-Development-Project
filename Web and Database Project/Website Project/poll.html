@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+    Name: Ce-Jay Locquiao
+    Assignment CS336 Assignment 5a
+    Created: 10/04/2019
+    Description: The poll page of the conference website.
+-->
+<html>
+<head>
+    <title> Poll </title>
+    <meta name = "keywords" content="template"/>
+    <meta name = "description" content="Website Page"/>
+    <meta name = "author" content="Name"/>
+    <meta name = "robots" content="nofollow"/>
+    <meta charset = "UTF-8">
+    <link rel="stylesheet" href="css/webdefault.css">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="awards.html"> Awards </a>
+    </nav>
+</header>
+<main>
+    <h1> Poll </h1>
+    <h2 style="text-align: center"> Vote for an award. </h2>
+    <form>
+        <input type="radio" name="nominees" id = cheese value="Cheese Pizza" title="Cheese Pizza" required> Cheese Pizza <span id="vote1"> 0 </span> <br>
+        <input type="radio" name="nominees" id = pepperoni value="Pepperoni Pizza" title="Pepperoni Pizza" required> Pepperoni Pizza <span id="vote2"> 0 </span> <br>
+        <input type="radio" name="nominees" id = supreme value="Supreme Pizza" title="Supreme Pizza" required> Supreme Pizza <span id="vote3"> 0 </span> <br>
+        <br>
+        <input type="submit" value="submit" onclick="return checkVotes();" required>
+    </form>
+</main>
+<footer>
+    <address>
+        <small>
+            <p>While this web site was created to satisfy the requirement of
+                building a web site for an academic course at Regis University,
+                the views and opinions expressed on this web site are solely
+                those of the original author and do not necessarily represent the
+                views and opinions of Regis University.
+            </p> <br />
+            123 Sesame Street <br />
+            clocquiao001@regis.edu <br />
+        </small>
+    </address>
+</footer>
+</body>
+<script src="js/scripts.js"></script>
+
+<script>
+    function initVotes() {
+        var nominees = document.getElementsByName("nominees"); //becomes an array of size 3
+        for (i = 0; i < nominees.length; i++) {
+            var nominee = nominees[i].id;
+            var votes = getVote(nominee);
+            var idNum = i+1;
+            document.getElementById("vote" + (idNum)).innerHTML= "" + votes;
+            //var span = document.getElementById("Vote " + i);
+            //span.innerHTML = votes;
+            //return true;
+        }
+    }
+    window.onload = initVotes();
+</script>
+</html>

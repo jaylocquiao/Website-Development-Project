@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--
+    Name: Ce-Jay Locquiao
+    Assignment CS336 Assignment 5a
+    Created: 10/04/2019
+    Description: The registration page of the conference website.
+-->
+<html>
+<head>
+    <title> Registration </title>
+    <meta name = "keywords" content="template"/>
+    <meta name = "description" content="Website Page"/>
+    <meta name = "author" content="Name"/>
+    <meta name = "robots" content="nofollow"/>
+    <meta charset = "UTF-8">
+    <link rel="stylesheet" href="css/webdefault.css">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="index.html"> Home </a> |
+        <a href="awards.html"> Awards </a> |
+        <a href="activities.html"> Activities </a> |
+        <a href="meals.html"> Meals </a> |
+        <a href="speakers.html"> Speakers </a> |
+        <a href="workshop.html"> Workshops </a> |
+        <a href="registration.html"> Registration </a>
+    </nav>
+</header>
+<main>
+    <h1> Conference Registration </h1>
+    <form action="thankyou.html"method="post">
+        <fieldset>
+            <legend>Conference ID</legend>
+            <label>Conference Id </label> <input type="text" name="confId" id="confId" placeholder="conf" title="Enter Conference ID"
+                                                 maxlength="6" pattern="[0-9]{6}" onblur="return checkId();">
+        </fieldset>
+        <fieldset>
+            <legend> Personal Information </legend>
+        <label for="title">Title:</label>
+        <select id="title" name="title" title="Title" required>
+            <option value=""></option>
+            <option value="Mr.">Mr.</option>
+            <option value="Ms.">Ms.</option>
+            <option value="Mrs.">Mrs.</option>
+        </select>
+        <br>
+        <label for="firstname">First Name: </label>
+        <input type="text" id="firstname" name="firstname" placeholder="First Name" title="Enter First Name" pattern="[a-zA-Z]+" required>
+        <br>
+        <label for="lastname"> Last Name: </label>
+        <input type="text" id="lastname" name="lastname" placeholder="Last Name" title="Enter Last Name" pattern="[a-zA-Z]+" required>
+
+        <br>
+        <label for="addressLine1">Address Line 1</label>
+        <input type="text" id="addressLine1" name="addressLine1" placeholder="Address Line 1" title="Enter Address Line 1" pattern="[a-zA-Z0-9\ \#]+" required>
+        <br>
+        <label for="addressLine2">Address Line 2</label>
+        <input type="text" id="addressLine2" name="addressLine2" placeholder="Address Line 2" title="Enter Address Line 2" pattern="[a-zA-Z0-9\ \#]+">
+
+        <br>
+        <label for="city">City: </label> <input type="text" id="city" name="city" title="Enter City" placeholder="City" pattern="[a-zA-Z\]+" required>
+
+        <br>
+        <label for="states">States: </label>
+        <select id="states" name="states" title="States" required>
+            <option value=""></option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+        </select>
+
+        <br>
+        <label for="zipCode">Zip Code: </label>
+        <input type="text" id="zipCode" name="zipCode" title="Enter Zip Code" placeholder="Zip Code" pattern="[0-9]{5}" required>
+
+        <br>
+        <label for="telephone">Telephone: </label>
+        <input type="tel" id="telephone" name="telephone" title="Enter Telephone Number" placeholder="Telephone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+
+        <br>
+        <label for="email">Email Address: </label>
+        <input type="email" id="email" name="email" title="Enter Email Address" placeholder="Email Address" pattern="([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Zaz]{2,4})" required>
+        </fieldset>
+        <fieldset>
+            <legend> Company Information </legend>
+
+        <br>
+        <label for="url">Company Website:: </label> <input type="url" id="url" name="url" placeholder="Company URL (Optional)" title="Enter Company Website">
+
+        <br>
+        <label for="position">Position with Company: </label>
+        <input type="text" id="position" name="position" title="Enter Position with Company" placeholder="Position with Company" pattern="[a-zA-Z0-9\ \#]+" required>
+
+        <br>
+        <label for="companyName">Company Name: </label>
+        <input type="text" id="companyName" name="companyName" title="Enter Company Name" placeholder="Company Name" pattern="[a-zA-Z0-9\ \#]+" required>
+        </fieldset>
+        <fieldset>
+            <legend> Dining Information </legend>
+        <br>
+        <label> Do you want to purchase the Meal Pack or the Day 2 Dinner Pack?: </label>
+        <input type="radio" id="mealPack" name="meal" value="Meal Pack" title="Enter yes or no" required> Meal Pack
+        <input type="radio" id="day2Dinner" name="meal" value="Day 2 Dinner" title="Enter yes or no" required> Day 2 Dinner
+        </fieldset>
+        <fieldset>
+            <legend> Billing Information </legend>
+        <br>
+        <label for="billingFName">Billing First Name: </label>
+        <input type="text" id="billingFName" name="billingFName" title="Enter Billing First Name" placeholder="Billing First Name" pattern="[a-zA-Z]+" required>
+
+        <br>
+        <label for="billingLName">Billing Last Name: </label>
+        <input type="text" id="billingLName" name="billingLName" title="Enter Billing Last Name" placeholder="Billing Last Name" pattern="[a-zA-Z]+" required>
+
+        <br>
+        <label> Card Type: </label>
+        <input type="radio" name="cardType" value="Visa" id="Visa" title="Enter Card Type" required> Visa
+        <input type="radio" name="cardType" value="Mastercard" id="Mastercard" title="Enter Card Type" required> Mastercard
+        <input type="radio" name="cardType" value="American Express" id="AmericanExpress" title="Enter Card Type" required> American Express
+
+        <br>
+        <label for="cardNumber">Card Number: </label>
+        <input type="text" id="cardNumber" name="cardNumber" title="Enter Card Number" placeholder="Card Number" pattern="[0-9]{16}" required>
+
+        <br>
+        <label for="csv">Card Security Value (CSV): </label>
+        <input type="text" id="csv" name="csv" title="Enter CSV" placeholder="4-Digit CSV Number" pattern="[0-9]{4}" required>
+
+        <br>
+        <label for="expirationYear">Expiration Date Year: </label>
+        <input type="text" id="expirationYear" name="expirationYear" title="Enter expiration year date" placeholder="Expiration Year" pattern="[2][0]([1-2][6-9])" required>
+
+        <br>
+        <label for="expirationMonth">Expiration Date Month: </label>
+        <input type="text" id="expirationMonth" name="expirationMonth" title="Enter epiration month date" placeholder="Expiration Month" pattern="(0[1-9]|1[0-2])" required>
+        </fieldset>
+        <fieldset>
+            <legend> Workshop Information </legend>
+
+            <br>
+            <label> Session 1: </label>
+            <input id="sessionOneE0" type="radio" name="session1" value="a" title="Select a Workshop" required> Push-Up Exercise
+            <input id="sessionOneE1" type="radio" name="session1" value="b" title="Select a Workshop" required> Pull-Up Exercise
+            <input id="sessionOneE2" type="radio" name="session1" value="c" title="Select a Workshop" required> Sit-Up Exercise
+
+            <br>
+            <label> Session 2: </label>
+            <input id="sessionTwoE0" type="radio" name="session2" value="d" title="Select a Workshop"> Water Balloon Obstacle
+            <input id="sessionTwoE1" type="radio" name="session2" value="e" title="Select a Workshop"> Swimming/Paddling Obstacle
+            <input id="sessionTwoE2" type="radio" name="session2" value="f" title="Select a Workshop"> Cycling Obstacle
+
+            <br>
+            <label>Session 3: </label>
+            <input id="sessionThreeE0" type="radio" name="session3" value="g" title="Select a Workshop" required> Hero Costume Making
+            <input id="sessionThreeE1" type="radio" name="session3" value="h" title="Select a Workshop" required> Watch 'My Hero Academia'
+            <input id="sessionThreeE2" type="radio" name="session3" value="i" title="Select a Workshop" required> Dinner is Served
+
+<!--        <br>-->
+
+<!--            <label for="sessionOneE0"> Session 1: </label><input id="sessionOneE0" type="radio" name="session1" value="a" title="Select a Workshop" required> Push-Up Exercise <br>-->
+<!--            <label for="sessionOneE1"></label><input id="sessionOneE1" type="radio" name="session1" value="b" title="Select a Workshop" required> Pull-Up Exercise <br>-->
+<!--            <label for="sessionOneE2"></label><input id="sessionOneE2" type="radio" name="session1" value="c" title="Select a Workshop" required> Sit-Up Exercise <br>-->
+
+<!--        <br>-->
+
+<!--            <label for="sessionTwoE0"> Session Two: </label><input id="sessionTwoE0" type="radio" name="session2" value="d" title="Select a Workshop"> Water Balloon Obstacle <br>-->
+<!--            <label for="sessionTwoE1"></label><input id="sessionTwoE1" type="radio" name="session2" value="e" title="Select a Workshop"> Swimming/Paddling Obstacle <br>-->
+<!--            <label for="sessionTwoE2"></label><input id="sessionTwoE2" type="radio" name="session2" value="f" title="Select a Workshop"> Cycling Obstacle <br>-->
+
+<!--        <br>-->
+
+<!--            <label for="sessionThreeE0"> Session 3: </label><input id="sessionThreeE0" type="radio" name="session3" value="g" title="Select a Workshop" required> Hero Costume Making <br>-->
+<!--            <label for="sessionThreeE1"></label><input id="sessionThreeE1" type="radio" name="session3" value="h" title="Select a Workshop" required> Watch 'My Hero Academia' <br>-->
+<!--            <label for="sessionThreeE2"></label><input id="sessionThreeE2" type="radio" name="session3" value="i" title="Select a Workshop" required> Dinner is Served-->
+
+        <br><br>
+        <input type="submit" value="Submit" onclick="return submitRegistration();">
+        </fieldset>
+    </form>
+</main>
+<footer>
+    <address>
+        <small>
+            <p>While this web site was created to satisfy the requirement of
+                building a web site for an academic course at Regis University,
+                the views and opinions expressed on this web site are solely
+                those of the original author and do not necessarily represent the
+                views and opinions of Regis University.
+            </p> <br />
+            123 Sesame Street <br />
+            clocquiao001@regis.edu <br />
+        </small>
+    </address>
+</footer>
+<script src="js/scripts.js"></script>
+<script>
+
+    function checkWorkshops() {
+        const session1 = document.getElementsByName("session1");
+        const session2 = document.getElementsByName("session2");
+        const session3 = document.getElementsByName("session3");
+
+        var errorMsg = "Error: ";
+
+        if (!session1[1].checked) { //if a or c are selected
+            if ((session2[2].checked || session3[1].checked) && (session3[0].checked || session3[2].checked || session2[0].checked || session2[1].checked)) {
+                errorMsg += "Must take f and h together!!!!";
+                displayError(errorMsg);
+                return false;
+            } else {
+                return true;
+            }
+
+        } else { //b is selected
+            //check if any session 2 are checked
+            if (session2[0].checked || session2[1].checked || session2[2].checked) {
+                errorMsg += "Workshop B covers Session 2 ";
+                //displayError(errorMsg);
+                session2[0].checked = false;
+                session2[1].checked = false;
+                session2[2].checked = false;
+                //return false;
+
+            } if (session3[1].checked) { //check if h is checked
+                errorMsg += "Must take Workshop H with Workshop F ";
+                //displayError(errorMsg);
+                session3[0].checked = false;
+                session3[1].checked = false;
+                session3[2].checked = false;
+                //return false;
+
+            }
+            if (errorMsg == "Error: ") {
+                return true;
+            }
+            displayError(errorMsg);
+            return false;
+        }
+    }
+
+    function displayError(msg) {
+        var x = window.screen.availWidth/2 - 500/2;
+        var y = window.screen.availHeight/2 - 400/2;
+        const specs = "width=500px, height=400px, left=" + x + ",top=" + y;
+        localStorage.setItem("errorMsg", msg); //pushed error message into local storage
+        var errorWindow = window.open("error.html", "_blank", specs);
+    }
+
+</script>
+</body>
+</html>

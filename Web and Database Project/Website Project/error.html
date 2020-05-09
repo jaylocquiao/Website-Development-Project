@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+    Name: Ce-Jay Locquiao
+    Assignment CS336 Assignment 5a
+    Created: 10/04/2019
+    Description: The error page(s) of the conference website.
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body style="background-color: burlywood">
+    <h1 align="center"> Workshop Selection Error(s) </h1>
+    <div id="errorMsg"></div>
+    <br>
+    <input type="button" value="Close" onclick="window.close()">
+<script>
+    var msg = localStorage.getItem("errorMsg");
+    var div = document.getElementById("errorMsg");
+    div.innerHTML = msg;
+
+    //document.getElementById("errorMsg").innerHTML = msg;
+
+</script>
+</body>
+</html>

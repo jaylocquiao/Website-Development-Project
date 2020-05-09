@@ -1,0 +1,52 @@
+body {
+    background-color: darkgray;
+}
+
+.container {
+    text-align: center;
+}
+
+.menu {
+    display: inline-block;
+    background-color: white;
+    width: 48%;
+    margin: 10px;
+    text-align: center;
+}
+
+.speakers {
+    display: inline-block;
+    background-color: white;
+    width: 48%;
+    margin: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 250px;
+    text-align: right;
+    padding-bottom: 10px;
+}
+
+#workshoptable, tr, #workshoptable td, #workshoptable, th, #workshoptable {
+    background-color: white;
+    border: none;
+    padding-right: 2em;
+}
+
+fieldset:hover {
+    background-color: honeydew;
+    border-color: dodgerblue;
+    font-weight: bold;
+
+}
+
+input:hover {
+    background-color: lightgray;
+}
+
+select:hover{
+    background-color: dodgerblue;
+}
+
+
